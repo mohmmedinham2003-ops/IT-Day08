@@ -122,6 +122,43 @@ console.log("Hii");
 //     document.getElementById("tblCustomer").innerHTML=body;
 
 //     console.log(body);
+
+const apiKey = "635520cd5ee24ea8b6e70617262507"
+
+const baseurl = "http://api.weatherapi.com/v1"
+
+fetch(`${baseurl}/current.json?key=${apiKey}&q=panadura`).then(res=>res.json()).then(data=>{
+    console.log(data);
+
+    document.getElementById("contentSection").innerHTML=`
+    <h1>${data.current.condition.text}</h1>
+                <h1>${data.location.name}</h1>
+                <img src="${data.current.condition.icon}" alt>
+                <p>${data.location.country}</p>
+                <p>${data.current.temp_c}</p>
+    `
+})
+
+function btnSearchByIdOnAction(){
+     let txtUserSearchValue = document.getElementById("txtSearch").value;
+    fetch(`${baseUrl}/current.json?key=${apiKey}&q=${txtUserSearchValue}`).then(res=>res.json()).then(data=>{
+    console.log(data);
+
+    document.getElementById("contentSection").innerHTML=`
+                <div>
+                <h1>${data.current.condition.text}</h1>
+                <h1>${data.location.name}</h1>
+                <img src="${data.current.condition.icon}" alt>
+                <p>${data.location.country}</p>
+                <p>${data.current.temp_c}</p>
+            </div>
+    `
+    
+})
+
+}
+
+
     
 
 // }
