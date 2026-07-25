@@ -1,39 +1,77 @@
-// localStorage.setItem("Name0","bimal");
+console.log("Hii");
 
-// localStorage.setItem("Name1","kamal");
+// localStorage.clear()
 
-// localStorage.setItem("Name2","nuwan");
-// localStorage.setItem("Name3","ranul");
+// localStorage.setItem("name","ranil");
+// localStorage.setItem("name","wimal");
+// localStorage.setItem("name1","kamal");
+
+
+// localStorage.removeItem("name1");
+
+// let custName = localStorage.getItem("name");
+
+// console.log(custName);
+// --------------------------------------------------
+
 // localStorage.clear();
 
-// localStorage.setItem("Name4","rahul");
+// let customer ={
+//     name:"kamal",
+//     age:12,
+//     isActive:true
+// }
 
-// localStorage.setItem("Name5","bahul");
+// let stringCustomer = JSON.stringify(customer);
 
+// localStorage.setItem("customer",stringCustomer);
 
-// //localStorage.removeItem("Name0");
-// //localStorage.removeItem("Name2");
+// let retCustomer = localStorage.getItem("customer");
 
-// let cusName = localStorage.setItem("Name4");
-// console.log(cusName);
-localStorage.clear();
+// let jsonCustoemr = JSON.parse(retCustomer);
 
-//step01------------
-let customer = {
-    name:"kamal",
-    age : 12,
-    isActive : true
+// console.log(jsonCustoemr.name);
 
+// console.log(customer);
+
+// ---------------------------------------------------
+
+const customerList =[];
+
+function btnAddCustomerOnAction(){
+    let customer = {
+        id:document.getElementById("txtCustomerId").value,
+        name:document.getElementById("txtCustomerName").value,
+        age:document.getElementById("txtCustomerAge").value,
+        address:document.getElementById("txtCustomerAddress").value
+    }
+    console.log(customer);
+
+    customerList.push(customer);
+
+    console.log(customerList);
+    
+    localStorage.setItem("customerList",JSON.stringify(customerList));
+
+    // alert("add customer")
 }
 
-let stringCustomer = JSON.stringify(customer);
+function btnSearchByIdOnAction(){
+    alert("search customer")
+}
 
-localStorage.setItem("customer",stringCustomer);
+function btnDeleteByIdOnAction(){
+    alert("delete customer");
+}
 
-let retCustomer = localStorage.getItem("customer");
+function btnUpdateByIdOnAction(){
+    alert("update customer");
+}
 
-let jsonCustomer = JSON.parse(retCustomer);
+function btnClearStorageOnAction(){
+    localStorage.clear();
+}
 
-console.log(jsonCustomer);
-
-
+function btnLoadTableOnAction(){
+    alert("load table");
+}
