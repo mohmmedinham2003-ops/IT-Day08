@@ -1,21 +1,39 @@
-localStorage.setItem("Name0","bimal");
+// localStorage.setItem("Name0","bimal");
 
-localStorage.setItem("Name1","kamal");
+// localStorage.setItem("Name1","kamal");
 
-localStorage.setItem("Name2","nuwan");
-localStorage.setItem("Name3","ranul");
+// localStorage.setItem("Name2","nuwan");
+// localStorage.setItem("Name3","ranul");
+// localStorage.clear();
+
+// localStorage.setItem("Name4","rahul");
+
+// localStorage.setItem("Name5","bahul");
+
+
+// //localStorage.removeItem("Name0");
+// //localStorage.removeItem("Name2");
+
+// let cusName = localStorage.setItem("Name4");
+// console.log(cusName);
 localStorage.clear();
 
-localStorage.setItem("Name4","rahul");
+//step01------------
+let customer = {
+    name:"kamal",
+    age : 12,
+    isActive : true
 
-localStorage.setItem("Name5","bahul");
+}
 
+let stringCustomer = JSON.stringify(customer);
 
-//localStorage.removeItem("Name0");
-//localStorage.removeItem("Name2");
+localStorage.setItem("customer",stringCustomer);
 
-let cusName = localStorage.setItem("Name4");
-console.log(cusName);
+let retCustomer = localStorage.getItem("customer");
 
+let jsonCustomer = JSON.parse(retCustomer);
+
+console.log(jsonCustomer);
 
 
