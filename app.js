@@ -74,4 +74,24 @@ function btnClearStorageOnAction(){
 
 function btnLoadTableOnAction(){
     alert("load table");
+
+    letTableList = document.getElementById("tblLoad");
+
+    let body = "";
+
+    customerList.forEach(element => {
+        body+=`
+         <tr>
+            <td>${element.id}</td>
+            <td>${element.id}</td>
+            <td>${element.id}</td>
+            <td>${element.id}</td>
+        </tr>
+        
+        `
+    });
+
+
+    tblLoad.innerHTML = body;
+
 }
