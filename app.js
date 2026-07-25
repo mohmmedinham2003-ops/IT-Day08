@@ -130,7 +130,7 @@ const apiKey = "635520cd5ee24ea8b6e70617262507"
 const baseUrl  = "http://api.weatherapi.com/v1"
 
 fetch(`${baseUrl }/current.json?key=${apiKey}&q=panadura`).then(res=>res.json()).then(data=>{
-    console.log(data);
+    //console.log(data);
 
     document.getElementById("contentSection").innerHTML=`
     <h1>${data.current.condition.text}</h1>
@@ -144,7 +144,7 @@ fetch(`${baseUrl }/current.json?key=${apiKey}&q=panadura`).then(res=>res.json())
 function btnSearchOnAction(){
      let txtUserSearchValue = document.getElementById("txtSearch").value;
     fetch(`${baseUrl }/current.json?key=${apiKey}&q=${txtUserSearchValue}`).then(res=>res.json()).then(data=>{
-    console.log(data);
+    //console.log(data);
 
     document.getElementById("contentSection").innerHTML=`
                 <div>
@@ -159,6 +159,16 @@ function btnSearchOnAction(){
 })
 
 }
+
+navigator.geolocation.getCurrentPosition((position)=>{
+    console.log(position);
+    console.log(position.coords.latitude);
+    console.log(position.coords.longitude);
+    
+    
+    
+});
+
 
 
     
