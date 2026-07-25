@@ -76,7 +76,17 @@ function btnSearchByIdOnAction(){
 }
 
 function btnDeleteByIdOnAction(){
-    alert("delete customer");
+   // alert("delete customer");
+   let customerList = JSON.parse(localStorage.getItem("customerList"));
+
+   let customerId = document.getElementById("txtCustomerId").value;
+
+   customerList.findIndex(customer =>{
+    return customer.id === customerId;
+   })
+   customerList.splice(index,1);
+   localStorage.setItem("customerList",JSON.stringify(customerList));
+   console.log(customerList);
 }
 
 function btnUpdateByIdOnAction(){
