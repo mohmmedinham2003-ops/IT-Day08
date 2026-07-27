@@ -71,6 +71,8 @@ console.log(jsonCustomer);
 console.log(customer);
 
 
+const customerList = JSON.parse(localStorage.getItem(customerList));
+
 
 
 
