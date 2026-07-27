@@ -16,6 +16,19 @@
 
 // // localStorage.clear();
 
+
+localStorage.setItem("name","Ranil");
+localStorage.setItem("name1","Wimal");
+localStorage.setItem("name2","Kumal");
+localStorage.setItem("name3","Nimal");
+localStorage.setItem("name4","Oumal");
+
+localStorage.removeItem("name1");
+
+let cusName = localStorage.getItem("name3");
+console.log(cusName);
+
+
 // // let customer ={
 // //     name:"kamal",
 // //     age:12,
