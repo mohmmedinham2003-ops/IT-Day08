@@ -1,60 +1,60 @@
-console.log("Hii");
+// console.log("Hii");
 
-// localStorage.clear()
+// // localStorage.clear()
 
-// localStorage.setItem("name","ranil");
-// localStorage.setItem("name","wimal");
-// localStorage.setItem("name1","kamal");
+// // localStorage.setItem("name","ranil");
+// // localStorage.setItem("name","wimal");
+// // localStorage.setItem("name1","kamal");
 
 
-// localStorage.removeItem("name1");
+// // localStorage.removeItem("name1");
 
-// let custName = localStorage.getItem("name");
+// // let custName = localStorage.getItem("name");
 
-// console.log(custName);
-// --------------------------------------------------
+// // console.log(custName);
+// // --------------------------------------------------
 
-// localStorage.clear();
+// // localStorage.clear();
 
-// let customer ={
-//     name:"kamal",
-//     age:12,
-//     isActive:true
-// }
+// // let customer ={
+// //     name:"kamal",
+// //     age:12,
+// //     isActive:true
+// // }
 
-// let stringCustomer = JSON.stringify(customer);
+// // let stringCustomer = JSON.stringify(customer);
 
-// localStorage.setItem("customer",stringCustomer);
+// // localStorage.setItem("customer",stringCustomer);
 
-// let retCustomer = localStorage.getItem("customer");
+// // let retCustomer = localStorage.getItem("customer");
 
-// let jsonCustoemr = JSON.parse(retCustomer);
+// // let jsonCustoemr = JSON.parse(retCustomer);
 
-// console.log(jsonCustoemr.name);
+// // console.log(jsonCustoemr.name);
 
-// console.log(customer);
+// // console.log(customer);
 
-// ---------------------------------------------------
+// // ---------------------------------------------------
 
-// const customerList = JSON.parse(localStorage.getItem("customerList"));
+// // const customerList = JSON.parse(localStorage.getItem("customerList"));
 
-// function btnAddCustomerOnAction() {
-//     //  let customerList = JSON.parse(localStorage.getItem("customerList"));
-//     let customer = {
-//         id: document.getElementById("txtCustomerId").value,
-//         name: document.getElementById("txtCustomerName").value,
-//         age: document.getElementById("txtCustomerAge").value,
-//         address: document.getElementById("txtCustomerAddress").value
-//     }
-//     console.log(customer);
+// // function btnAddCustomerOnAction() {
+// //     //  let customerList = JSON.parse(localStorage.getItem("customerList"));
+// //     let customer = {
+// //         id: document.getElementById("txtCustomerId").value,
+// //         name: document.getElementById("txtCustomerName").value,
+// //         age: document.getElementById("txtCustomerAge").value,
+// //         address: document.getElementById("txtCustomerAddress").value
+// //     }
+// //     console.log(customer);
 
-//     customerList.push(customer);
+// //     customerList.push(customer);
 
-//     localStorage.setItem("customerList", JSON.stringify(customerList));
-//     btnLoadTableOnAction();
+// //     localStorage.setItem("customerList", JSON.stringify(customerList));
+// //     btnLoadTableOnAction();
 
-//     // alert("add customer")
-// }
+// //     // alert("add customer")
+// // }
 
 // function btnSearchByIdOnAction() {
 //     let customerList = JSON.parse(localStorage.getItem("customerList"));
@@ -123,55 +123,114 @@ console.log("Hii");
 
 //     console.log(body);
 
+
 // }
 
-const apiKey = "635520cd5ee24ea8b6e70617262507"
 
-const baseUrl  = "http://api.weatherapi.com/v1"
 
-fetch(`${baseUrl }/current.json?key=${apiKey}&q=panadura`).then(res=>res.json()).then(data=>{
-    //console.log(data);
+// -------------------------------------------------------------------------------------
 
-    document.getElementById("contentSection").innerHTML=`
-    <h1>${data.current.condition.text}</h1>
-                <h1>${data.location.name}</h1>
-                <img src="${data.current.condition.icon}" alt>
-                <p>${data.location.country}</p>
-                <p>${data.current.temp_c}</p>
-    `
-})
+// const apiKey = "fa66d55bfb24497380e85722243011"
 
-function btnSearchOnAction(){
-     let txtUserSearchValue = document.getElementById("txtSearch").value;
-    fetch(`${baseUrl }/current.json?key=${apiKey}&q=${txtUserSearchValue}`).then(res=>res.json()).then(data=>{
-    //console.log(data);
+// const baseUrl = "http://api.weatherapi.com/v1"
 
-    document.getElementById("contentSection").innerHTML=`
-                <div>
-                <h1>${data.current.condition.text}</h1>
-                <h1>${data.location.name}</h1>
-                <img src="${data.current.condition.icon}" alt>
-                <p>${data.location.country}</p>
-                <p>${data.current.temp_c}</p>
-            </div>
-    `
+// fetch(`${baseUrl}/current.json?key=${apiKey}&q=panadura`).then(res => res.json()).then(data => {
+//     // console.log(data);
+
+//     document.getElementById("contentSection").innerHTML = `
+//                 <div>
+//                 <h1>${data.current.condition.text}</h1>
+//                 <h1>${data.location.name}</h1>
+//                 <img src="${data.current.condition.icon}" alt>
+//                 <p>${data.location.country}</p>
+//                 <p>${data.current.temp_c}</p>
+//             </div>
+//     `
+
+// })
+
+// function btnSearchOnAction() {
+//     let txtUserSearchValue = document.getElementById("txtSearch").value;
+//     console.log("Log 01");
     
-})
+//     fetch(`${baseUrl}/current.json?key=${apiKey}&q=${txtUserSearchValue}`).then(res => res.json()).then(data => {
+//         console.log(data);
+//         console.log("Log 02");
 
-}
+//         document.getElementById("contentSection").innerHTML = `
+//                 <div>
+//                 <h1>${data.current.condition.text}</h1>
+//                 <h1>${data.location.name}</h1>
+//                 <img src="${data.current.condition.icon}" alt>
+//                 <p>${data.location.country}</p>
+//                 <p>${data.current.temp_c}</p>
+//             </div>
+//     `
 
-navigator.geolocation.getCurrentPosition((position)=>{
-    console.log(position);
-    console.log(position.coords.latitude);
-    console.log(position.coords.longitude);
-    
-    
-    
-});
+//     })
+//     console.log("Log 03");
+
+// }
+
+// navigator.geolocation.getCurrentPosition((position) => {
+//     console.log(position);
+//     console.log(position.coords.latitude);
+//     console.log(position.coords.longitude);
+
+
+// });
 
 
 
-    
+// setTimeout(() => {
+//     console.log("Negitinawa...");
+//     setTimeout(() => {
+//        console.log("Munasodanawa...");
+//         setTimeout(() => {
+//            console.log("badu list hadanawa");
+//             setTimeout(() => {
+//                 console.log("edumak dagannawa...");
+//                 setTimeout(() => {
+//                     console.log("Kadeta yanawa...");
+//                     setTimeout(() => {
+//                         console.log("Yaluwath ekka kathakaranawa.. ");
+//                         setTimeout(() => {
+//                             console.log("kadeta awa....");
+
+//                             setTimeout(() => {
+//                                 console.log("polime innawa....");
+
+//                                 setTimeout(() => {
+//                                     console.log("bill karanawaaa..");
+
+//                                     setTimeout(() => {
+//                                         console.log("gedara enawaaa...");
+
+//                                         setTimeout(() => {
+//                                             console.log("ammata badu tika denawa");
+
+//                                             setTimeout(() => {
+//                                                 console.log("END....");
+//                                             }, 2000);
+                                            
+//                                         }, 5000);
+                                        
+//                                     }, 10000);
+                                    
+//                                 }, 5000);
+                                
+//                             }, 9000);
+                            
+//                         }, 5000);
+                        
+//                     }, 6000);
+                    
+//                 }, 50000);
+                
+//             }, 7500);
+//         }, 8000);
+//     }, 10000);
+// }, 5000);
 
 
-
+// // console.log();
