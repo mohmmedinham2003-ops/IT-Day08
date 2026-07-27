@@ -17,16 +17,19 @@
 // // localStorage.clear();
 
 
-localStorage.setItem("name","Ranil");
-localStorage.setItem("name1","Wimal");
-localStorage.setItem("name2","Kumal");
-localStorage.setItem("name3","Nimal");
-localStorage.setItem("name4","Oumal");
+// localStorage.setItem("name","Ranil");
+// localStorage.setItem("name1","Wimal");
+// localStorage.setItem("name2","Kumal");
+// localStorage.setItem("name3","Nimal");
+// localStorage.setItem("name4","Oumal");
 
-localStorage.removeItem("name1");
+// localStorage.removeItem("name1");
 
-let cusName = localStorage.getItem("name3");
-console.log(cusName);
+// let cusName = localStorage.getItem("name3");
+// console.log(cusName);
+
+//localStorage.clear();
+
 
 
 // // let customer ={
@@ -46,6 +49,28 @@ console.log(cusName);
 // // console.log(jsonCustoemr.name);
 
 // // console.log(customer);
+
+
+
+let customer={
+    name:"Kamal",
+    age : 12,
+    isActive : true 
+
+}
+
+let stringCustomer = JSON.stringify(customer);
+localStorage.setItem("customer",stringCustomer);
+
+let retCustomer = localStorage.getItem("customer");
+
+let jsonCustomer = JSON.parse(retCustomer);
+
+console.log(jsonCustomer);
+
+console.log(customer);
+
+
 
 // // ---------------------------------------------------
 
