@@ -74,29 +74,39 @@
 //localStorage.clear();
 
 
-const customerList = JSON.parse(localStorage.getItem("customerList"));
+//const customerList = JSON.parse(localStorage.getItem("customerList"));
+function btnAddCustomerOnAction() {
+  let customerList = JSON.parse(localStorage.getItem("customerList"));
+ let customer = {
+         id: document.getElementById("txtCustomerId").value,
+         name: document.getElementById("txtCustomerName").value,
+         age: document.getElementById("txtCustomerAge").value,
+         address: document.getElementById("txtCustomerAddress").value
+     }
+     console.log(customer);
 
-function btnAddCustomerOnAction(){
+     customerList.push(customer);
+
+     localStorage.setItem("customerList", JSON.stringify(customerList));
+     btnLoadTableOnAction();
+
+      alert("add customer")
+ }
+
+function btnSearchByIdOnAction() {
     let customerList = JSON.parse(localStorage.getItem("customerList"));
 
-    let customer = {
-        id:document.getElementById("txtCustomerId").ariaValueMax,
-        name: document.getElementById("txtCustomerName").value,
-        age: document.getElementById("txtCustomerAge").value,
-        address: document.getElementById("txtCustomerAddress").value
+    let customerId = document.getElementById("txtCustomerId").value;
 
-    }
-    console.log(customer);
+   let customer =  customerList.find(customer =>{
+        return customer.id===document.getElementById("txtCustomerId").value;
+    });
 
-    customerList.push(customer);
-    localStorage.setItem("customerList",JSON.stringify(customerList));
-    
-
-
+    document.getElementById().value = customer.name;
+    document.getElementById().value = customer.name;
+    document.getElementById().value = customer.name;
 
 }
-
-
 
 // // ---------------------------------------------------
 
