@@ -74,7 +74,7 @@
 //localStorage.clear();
 
 
-const customerList = JSON.parse(localStorage.getItem(customerList));
+const customerList = JSON.parse(localStorage.getItem("customerList"));
 
 function btnAddCustomerOnAction(){
     let customerList = JSON.parse(localStorage.getItem("customerList"));
@@ -86,6 +86,11 @@ function btnAddCustomerOnAction(){
         address: document.getElementById("txtCustomerAddress").value
 
     }
+    console.log(customer);
+
+    customerList.push(customer);
+    localStorage.setItem("customerList",JSON.stringify(customerList));
+    
 
 
 
