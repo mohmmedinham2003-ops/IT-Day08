@@ -50,29 +50,46 @@
 
 // // console.log(customer);
 
+//localStorage.clear();
 
 
-let customer={
-    name:"Kamal",
-    age : 12,
-    isActive : true 
+// let customer={
+//     name:"Kamal",
+//     age : 12,
+//     isActive : true 
 
-}
+// }
 
-let stringCustomer = JSON.stringify(customer);
-localStorage.setItem("customer",stringCustomer);
+// let stringCustomer = JSON.stringify(customer);
+// localStorage.setItem("customer",stringCustomer);
 
-let retCustomer = localStorage.getItem("customer");
+// let retCustomer = localStorage.getItem("customer");
 
-let jsonCustomer = JSON.parse(retCustomer);
+// let jsonCustomer = JSON.parse(retCustomer);
 
-console.log(jsonCustomer);
+// console.log(jsonCustomer);
 
-console.log(customer);
+// console.log(customer);
+
+//localStorage.clear();
 
 
 const customerList = JSON.parse(localStorage.getItem(customerList));
 
+function btnAddCustomerOnAction(){
+    let customerList = JSON.parse(localStorage.getItem("customerList"));
+
+    let customer = {
+        id:document.getElementById("txtCustomerId").ariaValueMax,
+        name: document.getElementById("txtCustomerName").value,
+        age: document.getElementById("txtCustomerAge").value,
+        address: document.getElementById("txtCustomerAddress").value
+
+    }
+
+
+
+}
 
 
 
