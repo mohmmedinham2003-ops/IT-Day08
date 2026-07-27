@@ -93,7 +93,7 @@ function btnAddCustomerOnAction() {
       alert("add customer")
  }
 
-function btnSearchByIdOnAction() {
+function btnSearchByIdOnAction(){
     let customerList = JSON.parse(localStorage.getItem("customerList"));
 
     let customerId = document.getElementById("txtCustomerId").value;
@@ -107,6 +107,18 @@ function btnSearchByIdOnAction() {
     document.getElementById().value = customer.name;
 
 }
+
+ function btnDeleteByIdOnAction() {
+    let customerList = JSON.parse(localStorage.getItem("customerList"));
+
+    customerList.findIndex(customer =>{
+        return customer.id === customerId;
+
+    })
+
+ localStorage.setItem("customerList", JSON.stringify(customerList));
+ console.log(customerList);
+ }
 
 // // ---------------------------------------------------
 
