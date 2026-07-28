@@ -124,6 +124,20 @@ function btnSearchByIdOnAction(){
  function btnClearStorageOnAction() {
  localStorage.clear();
 }
+
+function btnLoadTableOnAction(){
+    let customerList = JSON.parse(localStorage.getItem("customerList"));
+
+    let body = `
+     <tr>
+          <th>ID</th>
+      <th>Name</th>
+           <th>Age</th>
+           <th>Address</th>
+       </tr>
+    `;
+
+}
 // // ---------------------------------------------------
 
 // // const customerList = JSON.parse(localStorage.getItem("customerList"));
