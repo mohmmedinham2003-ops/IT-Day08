@@ -120,6 +120,10 @@ function btnSearchByIdOnAction(){
  console.log(customerList);
  }
 
+
+ function btnClearStorageOnAction() {
+ localStorage.clear();
+}
 // // ---------------------------------------------------
 
 // // const customerList = JSON.parse(localStorage.getItem("customerList"));
