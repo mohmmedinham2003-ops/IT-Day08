@@ -137,6 +137,22 @@ function btnLoadTableOnAction(){
        </tr>
     `;
 
+    customerList.array.forEach(element => {
+          body+=`
+               <tr>
+                <td>${element.id}</td>
+              <td>${element.name}</td>
+             <td>${element.age}</td>
+            <td>${element.address}</td>
+            </tr>
+        `
+    });
+
+    document.getElementById("tblCustomer").innerHTML = body;
+
+    console.log(body);
+    
+
 }
 // // ---------------------------------------------------
 
