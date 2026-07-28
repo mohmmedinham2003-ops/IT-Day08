@@ -125,6 +125,25 @@ function btnSearchByIdOnAction(){
  localStorage.clear();
 }
 
+function btnUpdateByIdOnAction() {
+
+ let customerList = JSON.parse(localStorage.getItem("customerList"));
+
+  let customer = customerList.find(customer => {
+        return customer.id === document.getElementById("txtCustomerId").value
+    });
+
+
+    document.getElementById("txtCustomerName").value = customer.name;
+    document.getElementById("txtCustomerAge").value = customer.age;
+    document.getElementById("txtCustomerAddress").value = customer.address;
+
+    localStorage.setItem("customerList",JSON.stringify(customerList));
+
+    alert("search customer")
+ }
+
+
 function btnLoadTableOnAction(){
     let customerList = JSON.parse(localStorage.getItem("customerList"));
 
