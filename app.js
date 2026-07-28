@@ -127,21 +127,28 @@ function btnSearchByIdOnAction(){
 
 function btnUpdateByIdOnAction() {
 
- let customerList = JSON.parse(localStorage.getItem("customerList"));
+    let customerList = JSON.parse(localStorage.getItem("customerList")) || [];
 
-  let customer = customerList.find(customer => {
-        return customer.id === document.getElementById("txtCustomerId").value
+    let customer = customerList.find(customer => {
+        return customer.id === document.getElementById("txtCustomerId").value;
     });
 
+    if (customer) {
 
-    document.getElementById("txtCustomerName").value = customer.name;
-    document.getElementById("txtCustomerAge").value = customer.age;
-    document.getElementById("txtCustomerAddress").value = customer.address;
+        customer.name = document.getElementById("txtCustomerName").value;
+        customer.age = document.getElementById("txtCustomerAge").value;
+        customer.address = document.getElementById("txtCustomerAddress").value;
 
-    localStorage.setItem("customerList",JSON.stringify(customerList));
+        localStorage.setItem("customerList", JSON.stringify(customerList));
 
-    alert("search customer")
- }
+        btnLoadTableOnAction();
+
+        alert("Customer updated successfully!");
+
+    } else {
+        alert("Customer not found!");
+    }
+}
 
 
 function btnLoadTableOnAction(){
