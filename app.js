@@ -75,111 +75,111 @@
 
 
 //const customerList = JSON.parse(localStorage.getItem("customerList"));
-function btnAddCustomerOnAction() {
-  let customerList = JSON.parse(localStorage.getItem("customerList"));
- let customer = {
-         id: document.getElementById("txtCustomerId").value,
-         name: document.getElementById("txtCustomerName").value,
-         age: document.getElementById("txtCustomerAge").value,
-         address: document.getElementById("txtCustomerAddress").value
-     }
-     console.log(customer);
+// function btnAddCustomerOnAction() {
+//   let customerList = JSON.parse(localStorage.getItem("customerList"));
+//  let customer = {
+//          id: document.getElementById("txtCustomerId").value,
+//          name: document.getElementById("txtCustomerName").value,
+//          age: document.getElementById("txtCustomerAge").value,
+//          address: document.getElementById("txtCustomerAddress").value
+//      }
+//      console.log(customer);
 
-     customerList.push(customer);
+//      customerList.push(customer);
 
-     localStorage.setItem("customerList", JSON.stringify(customerList));
-     btnLoadTableOnAction();
+//      localStorage.setItem("customerList", JSON.stringify(customerList));
+//      btnLoadTableOnAction();
 
-      alert("add customer")
- }
+//       alert("add customer")
+//  }
 
-function btnSearchByIdOnAction(){
-    let customerList = JSON.parse(localStorage.getItem("customerList"));
+// function btnSearchByIdOnAction(){
+//     let customerList = JSON.parse(localStorage.getItem("customerList"));
 
-    let customerId = document.getElementById("txtCustomerId").value;
+//     let customerId = document.getElementById("txtCustomerId").value;
 
-   let customer =  customerList.find(customer =>{
-        return customer.id===document.getElementById("txtCustomerId").value;
-    });
+//    let customer =  customerList.find(customer =>{
+//         return customer.id===document.getElementById("txtCustomerId").value;
+//     });
 
-    document.getElementById().value = customer.name;
-    document.getElementById().value = customer.name;
-    document.getElementById().value = customer.name;
+//     document.getElementById().value = customer.name;
+//     document.getElementById().value = customer.name;
+//     document.getElementById().value = customer.name;
 
-}
+// }
 
- function btnDeleteByIdOnAction() {
-    let customerList = JSON.parse(localStorage.getItem("customerList"));
+//  function btnDeleteByIdOnAction() {
+//     let customerList = JSON.parse(localStorage.getItem("customerList"));
 
-    customerList.findIndex(customer =>{
-        return customer.id === customerId;
+//     customerList.findIndex(customer =>{
+//         return customer.id === customerId;
 
-    })
+//     })
 
- localStorage.setItem("customerList", JSON.stringify(customerList));
- console.log(customerList);
- }
-
-
- function btnClearStorageOnAction() {
- localStorage.clear();
-}
-
-function btnUpdateByIdOnAction() {
-
-    let customerList = JSON.parse(localStorage.getItem("customerList")) || [];
-
-    let customer = customerList.find(customer => {
-        return customer.id === document.getElementById("txtCustomerId").value;
-    });
-
-    if (customer) {
-
-        customer.name = document.getElementById("txtCustomerName").value;
-        customer.age = document.getElementById("txtCustomerAge").value;
-        customer.address = document.getElementById("txtCustomerAddress").value;
-
-        localStorage.setItem("customerList", JSON.stringify(customerList));
-
-        btnLoadTableOnAction();
-
-        alert("Customer updated successfully!");
-
-    } else {
-        alert("Customer not found!");
-    }
-}
+//  localStorage.setItem("customerList", JSON.stringify(customerList));
+//  console.log(customerList);
+//  }
 
 
-function btnLoadTableOnAction(){
-    let customerList = JSON.parse(localStorage.getItem("customerList"));
+//  function btnClearStorageOnAction() {
+//  localStorage.clear();
+// }
 
-    let body = `
-     <tr>
-          <th>ID</th>
-      <th>Name</th>
-           <th>Age</th>
-           <th>Address</th>
-       </tr>
-    `;
+// function btnUpdateByIdOnAction() {
 
-    customerList.array.forEach(element => {
-          body+=`
-               <tr>
-                <td>${element.id}</td>
-              <td>${element.name}</td>
-             <td>${element.age}</td>
-            <td>${element.address}</td>
-            </tr>
-        `
-    });
+//     let customerList = JSON.parse(localStorage.getItem("customerList")) || [];
 
-    document.getElementById("tblCustomer").innerHTML = body;
+//     let customer = customerList.find(customer => {
+//         return customer.id === document.getElementById("txtCustomerId").value;
+//     });
 
-    console.log(body);
+//     if (customer) {
+
+//         customer.name = document.getElementById("txtCustomerName").value;
+//         customer.age = document.getElementById("txtCustomerAge").value;
+//         customer.address = document.getElementById("txtCustomerAddress").value;
+
+//         localStorage.setItem("customerList", JSON.stringify(customerList));
+
+//         btnLoadTableOnAction();
+
+//         alert("Customer updated successfully!");
+
+//     } else {
+//         alert("Customer not found!");
+//     }
+// }
+
+
+// function btnLoadTableOnAction(){
+//     let customerList = JSON.parse(localStorage.getItem("customerList"));
+
+//     let body = `
+//      <tr>
+//           <th>ID</th>
+//       <th>Name</th>
+//            <th>Age</th>
+//            <th>Address</th>
+//        </tr>
+//     `;
+
+//     customerList.array.forEach(element => {
+//           body+=`
+//                <tr>
+//                 <td>${element.id}</td>
+//               <td>${element.name}</td>
+//              <td>${element.age}</td>
+//             <td>${element.address}</td>
+//             </tr>
+//         `
+//     });
+
+//     document.getElementById("tblCustomer").innerHTML = body;
+
+//     console.log(body);
     
 
-}
+// }
 // // ---------------------------------------------------
 
 // // const customerList = JSON.parse(localStorage.getItem("customerList"));
