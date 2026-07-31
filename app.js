@@ -382,11 +382,21 @@
 // // console.log();
 
 
-const apiKey = "635520cd5ee24ea8b6e70617262507";
+const apiKey = "635520cd5ee24ea8b6e70617262507"
 
 const baseUrl = "http://api.weatherapi.com/v1"
 
 fetch(`${baseUrl}/current.jason?key=${apiKey}&q=panadura`).then(res => res.json()).then(data=> {
-    console.log(data);
+    //console.log(data);
+
+     document.getElementById("contentSection").innerHTML = `
+                <div>
+                <h1>${data.current.condition.text}</h1>
+                <h1>${data.location.name}</h1>
+                <img src="${data.current.condition.icon}" alt>
+                <p>${data.location.country}</p>
+                <p>${data.current.temp_c}</p>
+            </div>
+    `
     
 })
