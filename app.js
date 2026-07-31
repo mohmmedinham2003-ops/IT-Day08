@@ -380,3 +380,13 @@
 
 
 // // console.log();
+
+
+const apiKey = "635520cd5ee24ea8b6e70617262507";
+
+const baseUrl = "http://api.weatherapi.com/v1"
+
+fetch(`${baseUrl}/current.jason?key=${apiKey}&q=panadura`).then(res => res.json()).then(data=> {
+    console.log(data);
+    
+})
