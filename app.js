@@ -400,3 +400,17 @@ fetch(`${baseUrl}/current.jason?key=${apiKey}&q=panadura`).then(res => res.json(
     `
     
 })
+
+function btnSearchOnAction() {
+    let txtUserSearchValue = document.getElementById("txtSearch").value;
+
+    fetch(`${baseUrl}/current.json?key=${apiKey}&q=${txtUserSearchValue}`).then(res => res.json()).then(data => {
+        console.log(data);
+
+      
+
+
+    })
+
+
+}
